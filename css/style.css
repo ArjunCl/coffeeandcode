@@ -1,0 +1,199 @@
+/* css is all rule based, we target an element, and then apply styles to it using 'properties' and 'values' */
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic);
+
+body {
+	/*declare the font on the outermost content element so that it cascades down to the child elements.*/
+
+	/*when declaring a 'font-stack', you need to provide a fallback font (e.g. sans-serif), that can be used when the primary one can't be found. otherwise, the browser will choose the deault, times new roman.*/
+	font-family: Roboto, sans-serif;
+
+	/*16px is the default size a browser gives the type and the recommended size*/
+	font-size: 16px;
+
+	/*we set the line heigth as a decimal value. the line height in this case would be equivalent to 25px (or 16x1.5)*/
+	line-height: 1.5;
+
+	/*this sets the color of the text. it can be done with a keyword, an rgba value or a hex value.*/
+	color: #444444;
+
+	/*set a background fallback colour in case someon's on a really slow browser and can't load the image.*/
+	background: #999999;
+
+	/*we use the '../' to come out of the css folder, then go into the images folder with the images/.*/
+	background-image: url(../images/background.jpg);
+
+	/*we use this to center the image on the body element on both the x and y axis*/
+	background-position: center;
+
+	/*this is to make sure that css doesn't do the tiling thing.*/
+	background-repeat: no-repeat;
+
+	/*this means that the background appears to stay in place an the text is srolling only. it attaches it to the viewport in a fixed position.*/
+	background-attachment: fixed;
+
+	/*part of css3, the latest version and allows us to size backgrounds where you couldn't before*/
+	background-size: cover;
+
+	max-width: 680px;
+
+	/*we speciied the margin using the shorthand, which goes clockwise, the 'auto' keyword automatically centers the body.*/
+	margin: 0 auto 0 auto;
+
+}
+
+header{
+
+	/*center the logo*/
+	text-align: center;
+
+	/*provide some 'padding'. this pushes the edge of the box out more.*/
+	padding: 20px 0 20px 0;
+
+}
+
+nav{
+
+	/*apply background colour (#fee34c)*/
+	background: #fee34c;
+
+	/*align the text in the centre*/
+	text-align: center;
+
+	/*apply some padding (20px top and bottom)*/
+	padding: 20px 0;
+	/*to make padding easier if the top and bottom are the same and the sides are the same
+	you can just add two code parts intead of four, e.g. instead of 20px 0 20px 0 you can write 20px 0.*/
+}
+
+/*this will only select anchors that are inside nav elements*/
+nav a{
+
+	/*removes the underline*/
+	text-decoration: none;
+
+	padding: 20px;
+
+	/*we can be explicit about our font weight and target it specifically*/
+	font-weight: 700;
+
+	/*get rid of the nasty default colour*/
+	color: #444;
+	/*you can shorten it when all the 6 characters are the same*/
+}
+
+/*this is called a pseudo state, and we can hook into the hover action on an element.*/
+nav a:hover {
+
+	color: #666;
+
+}
+
+section {
+
+	background-color: #fff;
+
+	padding: 20px 40px;
+
+	/*we specify 3 properties:thickness, type and colour. getting the order of these doesn't really matter, which can give us some flexibility.*/
+	border-bottom: solid 1px #eee;
+
+}
+
+/*we hook into a class name using a period (.) and then the name of the class, no spaces.*/
+.quote {
+	background: #e3e7e6;
+}
+
+.quote p {
+	text-align: right;
+}
+
+/*overriding the default 'user agent' stylesheet*/
+
+h2 {
+
+	font-size: 21px;
+
+	margin: 20px 0;
+}
+
+p {
+	margin: 20px 0;
+}
+
+blockquote {
+
+	/*style up the blockquote so it's distinctly different from the main text*/
+	font-size: 24px;
+	font-weight: 700;
+	margin: 20px 0;
+}
+
+footer{
+	text-align: center;
+	padding: 40px 0;
+}
+
+.caption {
+
+	text-align: right;
+	font-size: 12px;
+
+	margin: 0;
+	padding: 10px 0 15px 0;
+	border-bottom: solid 1px #eee;
+
+	text-transform: uppercase;
+	letter-spacing: 3px;
+
+}
+
+/*we can target multiple elements in one selector, using a comma after every one, except for the last one.*/
+img,
+iframe{
+	max-width: 100%;
+}
+
+.trigger{
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	display: none;
+}
+
+nav{
+	display: block;
+}
+
+/*we use a mobile-first approach to make sure the nav is visible on larger screens the javascript will affect the inline
+display of the navigation, so we override it with the css '!important' tag*/
+
+@media screen and (min-width: 721px) {
+	nav{
+		display: block!important;
+	}
+}
+
+/*this is a media query block, it applies styles to our page when the width is below 720px*/
+@media screen and (max-width: 720px) {
+
+	section {
+		padding: 20px 4%;
+	}
+
+	/*anchor tags are inline elements by default, we need to force them to stack on top of each other using this display property*/
+	nav a {
+		display: block;
+		padding: 10px 0;
+	}
+
+.trigger{
+	display: block;
+}
+
+nav{
+	display: none;
+}
+
+}
