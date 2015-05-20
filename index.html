@@ -1,0 +1,147 @@
+<html>
+
+	<!-- stuff in the head is invisible.
+	and contains elements to describe
+	 the html doc. -->
+	<head>
+
+	<!-- we always want to have the character set to allow the full range of characters. -->
+		<meta charset="utf-8">
+
+		<!-- title should be around 60 characters max. (maybe 70) -->
+		<title>Coffee + Code Café</title>
+
+		<meta name="description" content="A cafe in London that lets you work on code as much as you like">
+
+		<link rel="stylesheet" href="css/style.css">
+
+		<!-- this forces smaller screened devicesto behave properly with responsive layouts -->
+		<meta name="viewport" content="width=device-width">
+
+	</head>
+
+	<body>
+
+			<!-- the header tag is a newish html5 tag, it has a lot more samntic value than traditional html tags -->
+			<header>
+
+			<!-- short for 'heading 1'. there's 6 that we can use, h1, h2 etc. -->
+			<hi>
+
+			<!-- the / tells us that the thing before it is a folder and the thing after it is something in that folder. there can be a fair few. the scr tells us that the following thing is the source of the image. -->
+			<!-- the alt= section is important because poeple who are using screen readers know what the image is and also google images can know what your image is about. and, people can know what the image is if they have a slow connection. -->
+				<img src="images/logo.png" alt="Coffee and Code">
+			</hi>
+
+			</header>
+
+			<a href="#links" class="trigger">
+				<img src="images/burger-icon.png" menu icon>
+			</a>
+
+			<!-- html5 thing used or nav. blocks -->
+			<nav id="links">
+
+			<!-- 'a' is called an anchor tag. -->
+			<a href="index.html">Home</a>
+			<a href="about.html">About</a>
+			<a href="http://twitter.com/codecafe">Twitter</a>
+			<a href="http://facebook.com/codecafe">Facebook</a>
+
+			<!-- mailto: makes the system automatically boot up the default email program -->
+			<a href="mailto:help@steer.me">Email</a>
+
+			</nav>
+
+			<!-- section is html5 semantic (real meaning) element -->
+			<section>
+
+			<h2>Welcome to Coffee + Code Café</h2>
+
+			<p>In April 2011 we opened our doors on Exmouth Market, intent on bringing to the neighbourhood the very best coffee possible. Sourcing, roasting and brewing great coffee lead to more, and since then, our Clerkenwell cafe has evolved into a thriving destination for coffee, food, beer and wine lovers alike.</p>
+
+			<img src="images/cafe.png" alt="Photo of the cafe">
+
+			<p>While our focus on serving great coffee has never faltered, we quickly added to our repertoire breakfast, lunch, dinner and weekend brunch services, rapidly receiving acclaim for each. We've been voted Runner Up Best Independent Cafe Europe (Allegra Symposium), Best Vegetarian Breakfast (Observer Food Monthly), 'a great day-time cafe, becoming a major point of interest' (Time Out), and won 'Best Independent Cafe' at the 2012 Cafe Society Awards.</p>
+
+			<img src="images/food.png" alt="Our awesome food">
+
+			<p>A continually developing focus on conscientious and considered sourcing and preparation underpins everything we do, combined with a desire to always share these goods with our guests in a humble and relaxed way.</p>
+
+			</section>
+
+
+
+
+
+			<section class="quote">
+
+			<blockquote>"The coffee was really good and the place itself was more than relaxed. I was so comfortable I didn't want to leave. I will definitely return."</blockquote>
+
+			<p>— Sophie from London</p>
+
+			</section>
+
+
+
+			<section>
+				
+				<h2>Make the perfect coffee</h2>
+
+				<!-- an iframe allows us to embed content from other websites onto our own, but we can't change anything about it. -->
+
+				<iframe width="600" height="338" src="https://www.youtube.com/embed/hACqanseofs?rel=0" frameborder="0" allowfullscreen></iframe>
+
+				<p class="caption">Making the perfect coffee</p>
+
+				<p>Making the perfect coffee</p>
+
+				<p>Our very own James shows Time Out London how to make the perfect coffee</p>
+
+			</section>
+
+
+
+			<section class="quote">
+				
+			<blockquote>"Food and coffee are both exceptional. As expected orange juice is the freshly squeezed variety. You can't go wrong with the breakfast corn fritters or poached eggs with sourdough and tomato kasundi."</blockquote>
+
+			<p>— Jing from London</p>
+
+			</section>
+
+
+
+			<section>
+				
+			<h2>Where are we?</h2>
+
+			<!-- the url tells google maps the lat. and long. of the specific location on the map (and some other stuff too). -->
+
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.306535091706!2d-0.10910139999999213!3d51.52593729999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b4586a777d3%3A0xd5ada88a54966d0a!2sExmouth+Market%2C+London+EC1R+4QL!5e0!3m2!1sen!2suk!4v1422708037652" width="600" height="450" frameborder="0" style="border:0"></iframe>
+
+			</section>
+
+
+
+			<footer>
+
+			<!-- by default, the twitter button embed gives us a flat html anchor tag -->
+				
+			<a href="https://twitter.com/coffeeandcode" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @coffeeandcode</a>
+
+			<!-- this javascript grabs the anchor tag above and replaces it with an iframe. the reason the code looks unreadable is because it's gone through a process of 'uglification'  -->
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+			</footer>
+
+		<!-- add scripts just before 'body' so that it doesn't block the loading of the rest of the page
+		and, if the js needs to react to a html element, sometimes it won't have loaded yet, causing problems -->
+
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/coffee.js"></script>
+
+	</body>
+
+</html>
